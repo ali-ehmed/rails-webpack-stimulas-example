@@ -1,0 +1,2 @@
+var container = document.querySelector(".book-details[data-book-id='<%= @book.id %>']");
+container.innerHTML = "<%= j render partial: 'book_details' %>";

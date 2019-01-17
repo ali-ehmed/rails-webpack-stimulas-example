@@ -1,0 +1,35 @@
+<div class="container">
+  <p id="notice"><%= notice %></p>
+  <%= link_to 'Add New Book', new_book_path, class: 'btn btn-outline-dark float-right' %>
+  <h1 class="my-5">Books</h1>
+  <% @books.each do |book| %>
+    <div class="row mt-3">
+      <div class="col-sm-3">
+        <div>
+          <%= book_cover_tag(book, class: 'book-cover') %>
+        </div>
+        <div class="text-warning ml-5 mt-2 rating-read-only" data-book-id="<%= book.id %>">
+          <% Book::RATING_RANGE.each do |rate| %>
+            <i class="<%= rate <= book.rating ? 'fas' : 'far' %> fa-star"></i>
+          <% end %>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="row">
+          <div class="col-sm-3">
+            <h6>Title</h6>
+            <h6>Author</h6>
+            <h6>ISBN</h6>
+          </div>
+          <div class="col-sm-9">
+            <p class="mb-2"><%= book.title %></p>
+            <p class="mb-2"><%= book.author %></p>
+            <p class="mb-2"><%= book.isbn %></p>
+            <div class="book-details" data-book-id="<%= book.id %>"></div>
+            <%= link_to 'Read More', book_path(book), remote: true, class: 'read-more', data: { book_id: book.id } %>
+          </div>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
