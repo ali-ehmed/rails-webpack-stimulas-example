@@ -5,7 +5,7 @@
     </div>
     <div class="col-sm-6 rating text-warning">
       <% Book::RATING_RANGE.each do |rate| %>
-        <i class="<%= rate <= @book.rating ? 'fas' : 'far' %> fa-star rating-star" data-action="click->book-details#rate" data-rate="<%= rate %>"></i>
+        <i class="<%= rate <= @book.rating.to_i ? 'fas' : 'far' %> fa-star rating-star" data-action="click->book-details#rate" data-rate="<%= rate %>"></i>
       <% end %>
     </div>
   </div>

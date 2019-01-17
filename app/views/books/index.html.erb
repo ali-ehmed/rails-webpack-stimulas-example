@@ -10,7 +10,7 @@
         </div>
         <div class="text-warning ml-5 mt-2 rating-read-only" data-book-id="<%= book.id %>">
           <% Book::RATING_RANGE.each do |rate| %>
-            <i class="<%= rate <= book.rating ? 'fas' : 'far' %> fa-star"></i>
+            <i class="<%= rate <= book.rating.to_i ? 'fas' : 'far' %> fa-star"></i>
           <% end %>
         </div>
       </div>
