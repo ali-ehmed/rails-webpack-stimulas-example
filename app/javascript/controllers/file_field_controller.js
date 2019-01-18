@@ -34,7 +34,7 @@ export default class extends Controller {
     });
     form.addEventListener('submit', (event) => {
       if (!hiddenField.value) {
-        Rails.stopEverything(event);
+        event.preventDefault();
         pond.processFile();
       }
     });
