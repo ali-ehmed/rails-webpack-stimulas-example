@@ -1,5 +1,5 @@
 <div class="book-details" data-controller="book-details" data-book-details-id="<%= @book.id %>" data-book-details-book-url="<%= book_path(@book) %>">
-  <div class="row mt-3">
+  <div class="row my-3">
     <div class="col-sm-3">
       <b>Rate this book</b>
     </div>
@@ -8,10 +8,8 @@
         <i class="<%= rate <= @book.rating.to_i ? 'fas' : 'far' %> fa-star rating-star" data-action="click->book-details#rate" data-rate="<%= rate %>"></i>
       <% end %>
     </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <%= link_to 'Edit Book Info', edit_book_path(@book) %>
+    <div class="col-sm-3">
+      <%= link_to 'Edit Book Info', edit_book_path(@book), class: 'btn btn-secondary btn-sm' %>
     </div>
   </div>
   <div class="row">
