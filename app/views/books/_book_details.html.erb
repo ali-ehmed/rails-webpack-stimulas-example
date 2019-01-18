@@ -1,4 +1,4 @@
-<div class="book-details" data-controller="book-details" data-book-details-id="<%= @book.id %>" data-book-details-book-url="<%= book_path(@book) %>">
+<div data-controller="book-details" data-book-details-id="<%= @book.id %>" data-book-details-book-url="<%= book_path(@book) %>">
   <div class="row my-3">
     <div class="col-sm-3">
       <b>Rate this book</b>
@@ -8,18 +8,23 @@
         <i class="<%= rate <= @book.rating.to_i ? 'fas' : 'far' %> fa-star rating-star" data-action="click->book-details#rate" data-rate="<%= rate %>"></i>
       <% end %>
     </div>
-    <div class="col-sm-3">
-      <%= link_to 'Edit Book Info', edit_book_path(@book), class: 'btn btn-secondary btn-sm' %>
-    </div>
   </div>
-  <div class="row">
-    <div class="col text-justify">
-      <%= @book.description %>
+  <div class="book-details">
+    <div class="row">
+      <div class="col">
+        <%= link_to 'Edit Book Info', edit_book_path(@book), class: 'text-info mr-2' %>
+        <%= link_to 'Delete this Book', book_path(@book), method: :delete, remote: true, class: 'text-danger' %>
+      </div>
     </div>
-  </div>
-  <div class="row mt-2">
-    <div class="col">
-      <%= link_to 'Read Less', '', data: { action: 'book-details#readLess' } %>
+    <div class="row">
+      <div class="col text-justify">
+        <%= @book.description %>
+      </div>
+    </div>
+    <div class="row mt-2">
+      <div class="col">
+        <%= link_to 'Read Less', '', data: { action: 'book-details#readLess' } %>
+      </div>
     </div>
   </div>
 </div>
