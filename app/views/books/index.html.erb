@@ -24,9 +24,9 @@
             <h6>ISBN</h6>
           </div>
           <div class="col-sm-9">
-            <p class="mb-2"><%= book.title %></p>
-            <p class="mb-2"><%= book.author %></p>
-            <p class="mb-2"><%= book.isbn %></p>
+            <p class="mb-2"><%= book.title.presence || '---' %></p>
+            <p class="mb-2"><%= book.author.presence || '---' %></p>
+            <p class="mb-2"><%= book.isbn.presence || '---' %></p>
             <div class="book-details" data-book-id="<%= book.id %>"></div>
             <%= link_to 'Read More', book_path(book), remote: true, class: 'read-more', data: { book_id: book.id } %>
           </div>
