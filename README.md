@@ -1,24 +1,16 @@
-# README
+# Webpack Stimulas JS Example 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple Book Store example created through Stimulas JS
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+- Rails 2.5.3
+- Pg
 
-* System dependencies
+## Installation
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- run `bundle`
+- run `yarn install`
+- setup your database.yml file
+- run `rails db:create db:migrate db:seed`
+- run `rails s'
